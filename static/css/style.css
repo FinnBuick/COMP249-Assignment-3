@@ -1,13 +1,205 @@
-/*body {
-    background-color: pink;
-    font-family: sans-serif;
-    }
+/* CSS Stylesheet for the COMP249 Jobs Board */
+/* Author: Your Name                     */
 
-#content {
-    background-color: white;
+html {
+    background-color: #c7c7c7;
+    color: #000000;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+.container {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+nav {
+	position: fixed;
+	top: 0;
+	width: 100%;
+}
+
+nav ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color:#546e7a;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+nav li a {
+	float: left;
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 1.25em;
+}
+
+nav form input[type=text] {
+    float: right;
+    color: black;
+}
+
+nav form input[type=submit] {
+    float: right;
+    display: block;
+    padding: 6px;
+    border: none;
+    margin-top: 8px;
+    margin-right: 16px;
+    font-size: 17px;
+    border-radius: 3px;
+}
+
+nav form input[type=submit]:hover {
+    background-color: lightgrey;
+}
+
+nav li a:hover {
+	background-color: #29434e;
+}
+
+nav .selected {
+	background-color: #29434e;
+}
+
+input {
+	display: block;
+	padding: 8px;
+    margin: 8px 5px;
+    border: 1px solid grey;
+    font-size: 15px;
+    border-radius: 3px;
+}
+
+.text-area {
+	display: block;
+	padding: 8px;
+    margin: 8px 5px;
+    border: 1px solid grey;
+    font-size: 15px;
+    border-radius: 3px;
+    width: 90%;
+}
+
+nav p {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    float: right;
+    color: white;
+	text-align: center;
+	padding-right: 10px;
+	font-size: .8em;
+}
+
+.search {
+	float: left;
+}
+
+.login {
+	float: right;
+}
+
+button {
+	display: block;
+    padding: 6px;
+    border: none;
+    margin-top: 8px;
+    margin-right: 16px;
+    font-size: 17px;
+    border-radius: 3px;
+}
+
+.content {
+	margin: auto;
+	margin-top: 60px;
+	width: 70%;
+}
+
+.contentpanel {
+	margin: auto;
+	margin-top: 60px;
+	width: 70%;
+	background-color: white;
+	padding: 20px;
+	border-radius: 5px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.row {
+	background-color: white;
+	padding: 20px;
+	margin-top: 10px;
+	border-radius: 5px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.row:hover {
+	background-color: #ededed;
+}
+
+.jobtitle {
+	font-size: 1.25em;
+	border-bottom: 1px solid lightgrey;
+	padding-bottom: 5px;
+}
+
+.company {
+	padding: 5px;
+}
+
+.location {
+	padding: 5px;
+}
+
+.description {
+	padding: 5px;
+}
+
+.meta {
+    padding: 5px;
+    padding-bottom: 5px;
+    float: right;
+    color: grey;
+}
+
+.readmore {
+    color: black;
+    text-decoration: none;
     text-align: center;
-    padding: 10px;
-    border-width: 2px;
-    border-radius: 5px;
-}*/
+    width: 80px;
+    background-color: buttonface;
+	display: block;
+    padding: 6px;
+    border: none;
+    margin-top: 8px;
+    margin-right: 16px;
+    font-size: 14px;
+    border-radius: 3px;
+}
 
+.readmore:hover {
+    background-color: lightgrey;
+}
+
+ul {
+    list-style-type: none;
+}
+
+label {
+    text-align: left;
+    floa: left;
+}
+
+.footer {
+	padding: 50px;
+	text-align: center;
+}
