@@ -44,7 +44,7 @@ def index():
     # ensure there is a session id
     sessionid = get_sessionid()
 
-    return template('index')
+    return static_file("index.html", root="views")
 
 
 def read_positions():

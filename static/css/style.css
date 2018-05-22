@@ -124,16 +124,6 @@ button {
 	width: 70%;
 }
 
-.contentpanel {
-	margin: auto;
-	margin-top: 60px;
-	width: 70%;
-	background-color: white;
-	padding: 20px;
-	border-radius: 5px;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
 .row {
 	background-color: white;
 	padding: 20px;
@@ -152,21 +142,14 @@ button {
 	padding-bottom: 5px;
 }
 
-.company {
-	padding: 5px;
-}
 
-.location {
-	padding: 5px;
-}
-
-.description {
-	padding: 5px;
+.icon {
+	margin-right: 5px;
 }
 
 .meta {
-    padding: 5px;
-    padding-bottom: 5px;
+	font-size: 0.8em;
+	padding: 0;
     float: right;
     color: grey;
 }
@@ -196,7 +179,7 @@ ul {
 
 label {
     text-align: left;
-    floa: left;
+    float: left;
 }
 
 .footer {
