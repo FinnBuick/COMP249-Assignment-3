@@ -41,10 +41,19 @@ def index():
     static file but for convenience we do this through
     the template"""
 
+    global response
+
+    global_response = response
+
+    response = static_file("index.html", root="views")
+
     # ensure there is a session id
     sessionid = get_sessionid()
 
-    return static_file("index.html", root="views")
+    local_response = response
+    response = global_response
+
+    return local_response
 
 
 def read_positions():

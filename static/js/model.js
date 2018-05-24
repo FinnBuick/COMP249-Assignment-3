@@ -35,6 +35,18 @@
         }
     }
 
+    Job.prototype.getPosition = function(id) {
+
+        var positions = this.positions
+
+        for (var i = 0; i < positions.length; i++) {
+            if(positions[i].id === id)
+                return positions[i]
+        }
+
+        return []
+    }
+
 
     /* export to the global window object */
     window.app = window.app || {}
