@@ -4,7 +4,7 @@
 html {
     background-color: #c7c7c7;
     color: #000000;
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
 
 body {
@@ -12,10 +12,6 @@ body {
 	padding: 0;
 }
 
-.container {
-	margin-left: auto;
-	margin-right: auto;
-}
 
 nav {
 	position: fixed;
@@ -123,11 +119,7 @@ button {
     margin: auto;
     padding: 10px;
     margin-top: 40px;
-    display: block;
-}
-
-.content {
-	margin: auto;
+    overflow: hidden;
 }
 
 .row {
@@ -191,4 +183,10 @@ label {
 .footer {
 	padding: 50px;
 	text-align: center;
+}
+
+.x {
+    float: right;
+    overflow: hidden;
+    margin: 10px;
 }
