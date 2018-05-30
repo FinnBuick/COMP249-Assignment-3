@@ -44,16 +44,14 @@
         <p class="location"><i class='icon' data-feather='map-pin'></i>{{location}}</p>
         <p class="company"><i class='icon' data-feather='briefcase'></i>{{company}}</p>
         <p class="description">{{{description}}}</p>
-        <form action="/apply" method="POST">
+        <h2>Apply:</h2>
+        <form id="apply" action="/apply" method="POST">
             <input type="hidden" name="position_id" value="{{id}}">
-            <label for="first_name">First Name:</label>
-            <input type="text" name="first_name">
-            <label for="last_name">Last Name:</label>
-            <input type="text" name="last_name">
-            <label for="years_experience">Years Experience:</label>
-            <input type="number" min="1" name="years_experience">
-            <label for="expertise">Expertise:</label><input type="text" name="expertise">
-            <input type="submit" value="Apply">
+            <input name="first_name" placeholder="first name">
+            <input name="last_name" placeholder="last name">
+            <input type="number" min="1" name="years_experience" placeholder="years experience">
+            <input name="expertise" placeholder="expertise">
+            <input placeholder="" type="submit" value="Apply">
         </form>
     </div>
 </template>
@@ -62,27 +60,14 @@
     Copyright &copy; 2018 Finneas Buick.
 </div>
 
-    <!--<form action="/apply" method="POST">
-        <input name="first_name" placeholder="first name">
-        <input name="last_name" placeholder="last name">
-        <input name="position_id" placeholder="position id">
-        <input name="years_experience" placeholder="years experience">
-        <input name="expertise" placeholder="expertise">
-        <input type="submit">
-    </form>-->
+<!-- load javascript libraries -->
+<script src="/static/js/jquery-3.3.1.min.js"></script>
+<script src="/static/js/handlebars.min.js"></script>
 
-
-    <!-- load javascript libraries -->
-    <script src="/static/js/jquery-3.3.1.min.js"></script>
-    <script src="/static/js/handlebars.min.js"></script>
-    
-    <!-- load project javascript -->
-    <!-- note that you can add more modules if you wish -->
-    <script src="/static/js/script.js"></script>
-    <script src="static/js/model.js"></script>
-    <script>
-        feather.replace({ width: 16, height: 16})
-    </script>
+<!-- load project javascript -->
+<!-- note that you can add more modules if you wish -->
+<script src="/static/js/script.js"></script>
+<script src="static/js/model.js"></script>
 
 </body>
 </html>

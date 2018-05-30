@@ -24,7 +24,7 @@
 
             $('.content-left').html(html)
             
-
+            //Presentation logic
             var id
             var rowClicked = false
             $(".row").on('click', function(){
@@ -43,25 +43,50 @@
                     $(".content-right").css("float", "right")
 
                     rowClicked = true
+
                     feather.replace({ width: 20, height: 20})
-            }
-
-            $(".x").on('click', function(){
-                if (rowClicked) {
-
-                    var position = window.app.model.getPosition(id)
-
-                    $(".content").css("width", "100%")
-                    $(".content").css("margin-right", "0px")
-                    $("#" + id).remove()
-                    rowClicked = false
-                    $(window).scrollTop(0);
                 }
+
+                $(".x").on('click', function(){
+                    if (rowClicked) {
+
+                        $(".content").css("width", "100%")
+                        $(".content").css("margin-right", "0px")
+                        $(".content-right").html("")
+                        rowClicked = false
+                        $(window).scrollTop(0);
+                    }
+                })
             })
 
+            feather.replace({ width: 20, height: 20})
+
+
+            //Submit application
+            $("#apply").submit(function(e) {
+
+                console.log('Hello')
+
+                $.ajax({
+                    url: 'http://127.0.0.1:8080/apply',
+                    method: 'POST',
+                    data: $("#apply").serialize(),
+                    success: function(data){
+                        alert(data)
+                    }
+                })
+                e.preventDefault()
             })
 
-            feather.replace({ width: 16, height: 16})
+            //Search function
+            $(".search").on("keyup", function() {
+                var input = $(".search").val().toLowerCase()
+                $(" .container .content-left .row").filter(function() {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(input) > -1)
+                })
+            })
         })
+
     })
+
 })()
