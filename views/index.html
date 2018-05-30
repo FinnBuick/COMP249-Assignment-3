@@ -9,23 +9,58 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 </head>
 <body>
-     <nav>
-            <ul>
-                <li><a class="active" href="/jobsearch">Jobs!</a></li>
-                <li><input class="search" type="text" name="search" placeholder="Search.."></li>
-                <li><a href="/about">About</a></li>
-                <li><a href="/companyreviews">Company Reviews</a></li>
-            </ul>
-        </nav>
+ <nav>
+    <ul>
+        <li><a class="active" href="/jobsearch">Jobs!</a></li>
+        <li><input class="search" type="text" name="search" placeholder="Search.."></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/companyreviews">Company Reviews</a></li>
+    </ul>
+</nav>
 
-    <div class="container">
-        <div class="content content-left"></div>
-        <div class="content content-right"></div>
-    </div>
+<div class="container">
+    <div class="content content-left"></div>
+    <div class="content content-right"></div>
+</div>
 
-    <div class="footer">
-        Copyright &copy; 2018 Finneas Buick.
+<template id="positions">
+    {{#each positions}}
+    <div class="row" data-id="{{id}}">
+        <p class="meta">{{convertDate created_at}}</p>
+        <a class="jobtitle"><b>{{title}}</b></a>
+        <p class="location"><i class='icon' data-feather='map-pin'></i>{{location}}</p>
+        <p class="company"><i class='icon' data-feather='briefcase'></i>{{company}}</p>
+        <p class="description">{{{trim description}}}</p>
+        <p></p>
     </div>
+    {{/each}}
+</template>
+
+<template id="position">
+    <div class="row" data-id="{{id}}">
+        <span class='x' data-feather='x-circle'></span>
+        <p class="meta">{{convertDate created_at}}</p>
+        <a class="jobtitle"><b>{{title}}</b></a>
+        <p class="location"><i class='icon' data-feather='map-pin'></i>{{location}}</p>
+        <p class="company"><i class='icon' data-feather='briefcase'></i>{{company}}</p>
+        <p class="description">{{{description}}}</p>
+        <form action="/apply" method="POST">
+            <input type="hidden" name="position_id" value="{{id}}">
+            <label for="first_name">First Name:</label>
+            <input type="text" name="first_name">
+            <label for="last_name">Last Name:</label>
+            <input type="text" name="last_name">
+            <label for="years_experience">Years Experience:</label>
+            <input type="number" min="1" name="years_experience">
+            <label for="expertise">Expertise:</label><input type="text" name="expertise">
+            <input type="submit" value="Apply">
+        </form>
+    </div>
+</template>
+
+<div class="footer">
+    Copyright &copy; 2018 Finneas Buick.
+</div>
 
     <!--<form action="/apply" method="POST">
         <input name="first_name" placeholder="first name">

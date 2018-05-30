@@ -1,6 +1,15 @@
 (function(){
 
-    /* your code goes here */
+    /* Handlebars Helpers */
+    Handlebars.registerHelper('trim', function(str) {
+        var theString = str.substring(0,150);
+        return new Handlebars.SafeString(theString + "...")
+    });
+
+    Handlebars.registerHelper('convertDate', function(str) {
+        var theString = new Date(str).toString().substring(0,21)
+        return new Handlebars.SafeString(theString)
+    });
 
     $(document).ready(function(){
 
@@ -9,19 +18,12 @@
 
         $(window).on("dataChanged", function() {
 
-            var positions = window.app.model.getPositions()
+            var positions = window.app.model.getPositions().slice(0, 10)
+            var template = Handlebars.compile($("#positions").html())
+            var html = template({positions: positions})
 
-            console.log(positions)
-
-            for (var i = 0; i < 10; i++) {
-                $('.content-left').append("<div class='row' data-id=" + positions[i].id + ">"
-                + "<p class='meta'>" + new Date(positions[i].created_at).toString().substring(0,21) + "</p>"
-                + "<a class='jobtitle'><b>" + positions[i].title + "</b></a>"
-                + "<p class'location'><i class='icon' data-feather='map-pin'></i>" + positions[i].location + "</p>"
-                + "<p class'company'><i class='icon' data-feather='briefcase'></i>" + positions[i].company + "</p>"
-                + "<p class='description'>" + positions[i].description.substring(0,250) + "...</p>"
-                + "</div>")
-            }
+            $('.content-left').html(html)
+            
 
             var id
             var rowClicked = false
@@ -30,32 +32,15 @@
 
                     id = this.dataset.id
                     var position = window.app.model.getPosition(id)
+                    var template = Handlebars.compile($("#position").html())
+                    var html = template(position)
+
+                    $(".content-right").html(html)
 
                     $(".content").css("width", "49%")
                     $(".content").css("margin-right", "10px")
                     $(".content-left").css("float", "left")
                     $(".content-right").css("float", "right")
-
-                    $(".content-right").append("<div class='row' id=" + position.id + ">"
-                    + "<span class='x' data-feather='x-circle'></span>"
-                    + "<p class='meta'>" + new Date(position.created_at).toString().substring(0,21) + "</p>"
-                    + "<a class='jobtitle'><b>" + position.title + "</b></a>"
-                    + "<p class'location'><i class='icon' data-feather='map-pin'></i>" + position.location + "</p>"
-                    + "<p class'company'><i class='icon' data-feat her='briefcase'></i>" + position.company + "</p>"
-                    + "<p class='description'>" + position.description + "</p>"
-                    + "<h2>Apply:</h2>"
-                    + "<form action='/apply' method='POST'>"
-                        + "<input type='hidden' name='position_id' value=" + position.id + ">"
-                        + "<label for='first_name'>First Name:</label>"
-                        + "<input type='text' name='first_name'>"
-                        + "<label for='last_name'>Last Name:</label>"
-                        + "<input type='text' name='last_name'>"
-                        + "<label for='years_experience'>Years Experience:</label>"
-                        + "<input type='number' min='1' name='years_experience'>"
-                        + "<label for='expertise'>Expertise:</label>"
-                        + "<input type='text' name='expertise'>"
-                        + "<input type='submit' value='Apply'>"
-                    + "</div>")
 
                     rowClicked = true
                     feather.replace({ width: 20, height: 20})
