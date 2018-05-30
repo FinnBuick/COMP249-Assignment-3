@@ -45,7 +45,16 @@
                     + "<p class='description'>" + position.description + "</p>"
                     + "<h2>Apply:</h2>"
                     + "<form action='/apply' method='POST'>"
-                        + "<input type='text' value=></input>"
+                        + "<input type='hidden' name='position_id' value=" + position.id + ">"
+                        + "<label for='first_name'>First Name:</label>"
+                        + "<input type='text' name='first_name'>"
+                        + "<label for='last_name'>Last Name:</label>"
+                        + "<input type='text' name='last_name'>"
+                        + "<label for='years_experience'>Years Experience:</label>"
+                        + "<input type='number' min='1' name='years_experience'>"
+                        + "<label for='expertise'>Expertise:</label>"
+                        + "<input type='text' name='expertise'>"
+                        + "<input type='submit' value='Apply'>"
                     + "</div>")
 
                     rowClicked = true
