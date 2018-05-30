@@ -64,18 +64,17 @@
 
             //Submit application
             $("#apply").submit(function(e) {
-
-                console.log('Hello')
+                e.preventDefault()
+                console.log("TEST")
 
                 $.ajax({
                     url: 'http://127.0.0.1:8080/apply',
                     method: 'POST',
-                    data: $("#apply").serialize(),
+                    data: $(this).serialize(),
                     success: function(data){
-                        alert(data)
+                        console.log(data)
                     }
                 })
-                e.preventDefault()
             })
 
             //Search function

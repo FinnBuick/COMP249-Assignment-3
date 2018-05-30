@@ -92,9 +92,9 @@ nav p {
     padding-bottom: 5px;
     float: right;
     color: white;
-	text-align: center;
-	padding-right: 10px;
-	font-size: .8em;
+    text-align: center;
+    padding-right: 10px;
+    font-size: .8em;
 }
 
 .search {
@@ -139,6 +139,15 @@ button {
 	font-size: 1.25em;
 	border-bottom: 1px solid lightgrey;
 	padding-bottom: 5px;
+    color: rgb(30, 90, 32);
+}
+
+.location {
+    color: rgb(0, 132, 150);
+}
+
+.company {
+    color: rgb(0, 132, 150);
 }
 
 
@@ -159,7 +168,7 @@ button {
     text-align: center;
     width: 80px;
     background-color: buttonface;
-	display: block;
+    display: block;
     padding: 6px;
     border: none;
     margin-top: 8px;
