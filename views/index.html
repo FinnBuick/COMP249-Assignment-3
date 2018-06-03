@@ -44,15 +44,16 @@
         <p class="location"><i class='icon' data-feather='map-pin'></i>{{location}}</p>
         <p class="company"><i class='icon' data-feather='briefcase'></i>{{company}}</p>
         <p class="description">{{{description}}}</p>
-        <h2>Apply:</h2>
-        <form id="apply" action="/apply" method="POST">
+        <h2 >Apply:</h2>
+        <form class="apply" action="/apply" method="POST">
             <input type="hidden" name="position_id" value="{{id}}">
-            <input name="first_name" placeholder="first name">
-            <input name="last_name" placeholder="last name">
-            <input type="number" min="1" name="years_experience" placeholder="years experience">
-            <input name="expertise" placeholder="expertise">
-            <input placeholder="" type="submit" value="Apply">
+            <input name="first_name" placeholder="First name">
+            <input name="last_name" placeholder="Last name">
+            <input type="number" min="1" name="years_experience" placeholder="Years experience">
+            <input name="expertise" placeholder="Expertise">
+            <input type="submit" value="Apply">
         </form>
+        <p class="message"></p>
     </div>
 </template>
 

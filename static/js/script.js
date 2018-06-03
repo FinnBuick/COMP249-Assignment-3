@@ -37,7 +37,7 @@
 
                     $(".content-right").html(html)
 
-                    $(".content").css("width", "49%")
+                    $(".content").css("width", "48.5%")
                     $(".content").css("margin-right", "10px")
                     $(".content-left").css("float", "left")
                     $(".content-right").css("float", "right")
@@ -62,10 +62,9 @@
             feather.replace({ width: 20, height: 20})
 
 
-            //Submit application
-            $("#apply").submit(function(e) {
+            $('.content-right').on('click', '.apply', function(e) {
+
                 e.preventDefault()
-                console.log("TEST")
 
                 $.ajax({
                     url: 'http://127.0.0.1:8080/apply',
@@ -73,9 +72,10 @@
                     data: $(this).serialize(),
                     success: function(data){
                         console.log(data)
+                        $(".message").append(data.message)
                     }
                 })
-            })
+            });
 
             //Search function
             $(".search").on("keyup", function() {
